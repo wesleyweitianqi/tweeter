@@ -1,0 +1,41 @@
+nav {
+  width: 100vw;
+  height:120px;
+  background: #4056A1;
+  color:#FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+nav span {
+  font-family: Bungee;
+  padding: 0 1.5em;
+ 
+}
+span:nth-child(1) {
+  align-self: flex-end;
+  padding-bottom: 20px;
+}
+
+.write {
+  display: flex;
+  flex-direction: column;
+  font-family: Source Sans Pro ,sans-serif;
+  justify-content: center;
+}
+
+strong {
+  font-family: Source Sans Pro 600;
+}
+section > span {
+  font-family: Source Sans Pro ,sans-serif;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+section > span:nth-child(2) {
+  align-self: center;
+  margin-top: -20px;
+  color: red;
+}
