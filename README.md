@@ -6,8 +6,9 @@ It makes use of JQuery-AJAX technology to fetch data from server by API, render 
 
 ## Screenshots
 
-!["Sreenshot of tweet compose box"]()
-!["Sreenshot of tweets"]()
+!["Sreenshot of desktopLayout"](https://github.com/wesleyweitianqi/tweeter/blob/master/doc/desktopLayout.png?raw=true)
+!["Sreenshot of tabletLayout"](https://github.com/wesleyweitianqi/tweeter/blob/master/doc/tabletLayout.png?raw=true)
+!["Sreenshot of tweets"](https://github.com/wesleyweitianqi/tweeter/blob/master/doc/tweets.png?raw=true)
 
 
 ## Dependencies
