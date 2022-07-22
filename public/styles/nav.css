@@ -6,6 +6,8 @@ nav {
   display: flex;
   justify-content: space-between;
   z-index: 1;
+  position: fixed;
+  top:0;
 }
 
 nav span {
@@ -23,6 +25,7 @@ span:nth-child(1) {
   flex-direction: column;
   font-family: Source Sans Pro ,sans-serif;
   justify-content: center;
+  padding-right: 25px;
 }
 
 strong {
@@ -39,3 +42,4 @@ section > span:nth-child(2) {
   margin-top: -20px;
   color: red;
 }
+

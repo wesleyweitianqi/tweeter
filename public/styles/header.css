@@ -8,5 +8,13 @@ body > header {
   color:black;
   background-image: url('../images/brick-wall-dark.png');
   z-index: 0;
+  top: 0;
 }
 
+h2 {
+  align-self: end;
+}
+
+header > div > h2 {
+  margin-top: 100px;
+}
