@@ -4,41 +4,28 @@
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 //  */
 
-$.ajax({
-  url: '/tweets',
-  method: 'GET',
-  data:'json',
-  success: function(data) {
-    for(const i of data) {
-      i.created_at = timeago.format(i.created_at)
-      console.log(i.created_at)
-    }
-    const elements = renderTweets(data);
-    $('#tweets-container').append(elements)
-    }
-  })
- 
+
 const createTweetElement = function(tweet) {
   let $tweet = `
   <article>
   <header>
-    <div>
-      <div><img class="img2" src="${tweet.user.avatars}"></div>
-      <div>${tweet.user.name}</div>
-    </div>
-    <div>${tweet.user.handle}</div>
+  <div>
+  <div><img class="img2" src="${tweet.user.avatars}"></div>
+  <div>${tweet.user.name}</div>
+  </div>
+  <div>${tweet.user.handle}</div>
   </header>
   <div class="inputText"><p>${tweet.content.text}</p></div>
   <hr>
   <footer>
-    <div><p class="time">Posted ${tweet.created_at}"</p></div>
-    <div class="symbol">
-      <span><i class="fa-solid fa-flag"></i></span>
-      <span><i class="fa-solid fa-retweet"></i></span>
-      <span><i class="fa-solid fa-heart"></i></span>
-    </div>
+  <div><p class="time">Posted ${tweet.created_at}"</p></div>
+  <div class="symbol">
+  <span><i class="fa-solid fa-flag"></i></span>
+  <span><i class="fa-solid fa-retweet"></i></span>
+  <span><i class="fa-solid fa-heart"></i></span>
+  </div>
   </footer>
-</article>
+  </article>
   `
   return $tweet;
 }
@@ -47,12 +34,28 @@ const renderTweets = function(tweets) {
 }
 
 $(document).ready(function() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    data:'json',
+    success: function(data) {
+      for(const i of data) {
+        i.created_at = timeago.format(i.created_at)
+        console.log(i.created_at)
+      }
+      const elements = renderTweets(data);
+      $('#tweets-container').append(elements)
+      }
+    })
   const submitform = $('.form-submit')
   submitform.submit((event) => {
     event.preventDefault(); //avoid to reload or visit route
     // console.log( $( this ).serialize() );
     const queryString = submitform.serialize();
+    console.log(queryString);
     const input = decodeURI(queryString).slice(5);
+    // const input = queryString.slice(5);
+    // console.log(decodeURI(queryString));
     $('.alert1').hide();
     $('.alert2').hide();
     //send querystring data
@@ -66,7 +69,7 @@ $(document).ready(function() {
       $('.alert2').show();
       return;
     }
-
+    console.log(input,input.length);
     $.ajax({
         url: '/tweets',
         method: 'POST',
